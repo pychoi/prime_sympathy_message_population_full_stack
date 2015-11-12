@@ -29,8 +29,7 @@ myApp.controller('FormController', ['$scope', '$http', function($scope, $http){
 
     //DELETE
     $scope.deleteButton = function(id){
-
-        $http.delete('/submit'+ id[0].id).then(function(response){
+        $http.delete('/submit', {params: {id: id[0].id}}).then(function(response){
             //console.log(response);
             $scope.messageObjectAppend = {};
             $scope.deletedMsg = "Your message has been deleted from the database.";

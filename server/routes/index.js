@@ -54,10 +54,10 @@ router.post('/submit', function(req, res){
 
 });
 
-router.delete('/submit:id', function(req, res){
+router.delete('/submit', function(req, res){
 
     pg.connect(connectionString, function (err, client) {
-        client.query("DELETE FROM sympathymessages WHERE id = ($1)", [req.params.id], function(err, result){
+        client.query("DELETE FROM sympathymessages WHERE id = ($1)", [req.query.id], function(err, result){
             if (err) {
                 console.log("Error deleting data! ", err);
                 res.send(false);
