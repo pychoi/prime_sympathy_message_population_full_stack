@@ -1,0 +1,30 @@
+h3 {
+    text-align: center;
+}
+
+
+label {
+    display: block;
+    margin-top: 20px;
+}
+
+.form-field-message{
+    display: inline-block;
+    margin-left: 40px;
+
+}
+
+.form-field {
+    display: inline-block;
+
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+}
+
+#messageContainer {
+    margin-top: 50px;
+}
+

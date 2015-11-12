@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/stylesheet.css">
+
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="assets/script/app.min.js"></script>
+
+</head>
+
+<body>
+
+    <h3>Input Your Message Here</h3>
+
+    <div ng-controller="FormController" class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-9">
+                <form name="messageForm" method="post">
+                        <div class="form-field">
+                            <label for="name">Name</label>
+                            <input ng-model="note.name" type="text" id="name" name="name" placeholder="Enter Name" size="30">
+
+
+
+                            <label for="email">E-mail</label>
+                            <input type="text" ng-model="note.email" id="email" name="email" placeholder="Enter Email" size="30">
+
+
+
+                            <label for="otherContact">Other Contact Information</label>
+                            <textarea type="text" ng-model="note.otherContact" id="otherContact" name="otherContact" placeholder="Other Contact Info" rows="2" cols="30"></textarea>
+                        </div>
+
+                    <div class="form-field-message">
+                        <label for="message">Message</label>
+                        <textarea type="text" ng-model="note.message" name="message" id="message" placeholder="Message here" rows="9" cols="40"></textarea>
+                    </div>
+                </form>
+
+                <div>
+                    <button ng-click="clickButton(note)" class="btn btn-success">Submit</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="messageContainer" class="row">
+            <div class="col-md-7 col-md-offset-3">
+                <div class="well" ng-show="predicate">
+                    <p class="name">Name: {{messageObjectAppend.name}}</p>
+                    <p class="email">Email: {{messageObjectAppend.email}}</p>
+                    <p class="other-contact">Other Contact Information: {{messageObjectAppend.otherContact}}</p>
+                    <p class="message lead">{{messageObjectAppend.message}}</p>
+
+                    <button ng-click="deleteButton(idArray)" ng-show="predicate" class="delete btn btn-danger">Delete from Database!</button>
+                </div>
+                <p class="lead" ng-hide="predicate">{{deletedMsg}}</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
